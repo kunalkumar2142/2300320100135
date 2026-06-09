@@ -4,12 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @NoArgsConstructor
-public class DepotResponse {
+public class AuthResponse {
 
-    @JsonProperty("Depots")
-    private List<Depot> depots;
+    @JsonProperty("token")
+    private String token;
 }

@@ -1,0 +1,13 @@
+package vehicle_maintence_scheduler.online;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class VehicleMaintenceSchedulerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(VehicleMaintenceSchedulerApplication.class, args);
+	}
+
+}

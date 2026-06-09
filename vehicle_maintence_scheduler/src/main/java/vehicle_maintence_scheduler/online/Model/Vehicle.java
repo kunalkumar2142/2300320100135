@@ -2,8 +2,10 @@ package vehicle_maintence_scheduler.online.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class Vehicle {
 
     @JsonProperty("TaskID")
@@ -14,30 +16,4 @@ public class Vehicle {
 
     @JsonProperty("Impact")
     private int impact;
-
-    public Vehicle() {}
-
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public int getImpact() {
-        return impact;
-    }
-
-    public void setImpact(int impact) {
-        this.impact = impact;
-    }
 }

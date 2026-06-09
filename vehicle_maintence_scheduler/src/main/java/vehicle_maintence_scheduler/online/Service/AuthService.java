@@ -54,7 +54,7 @@ public class AuthService {
         try {
             restTemplate.postForObject(url, request, Void.class);
         } catch (Exception e) {
-            // user may already exist — ignore and try login
+            // user may already exist
         }
     }
 
@@ -71,6 +71,10 @@ public class AuthService {
         HttpEntity<Map<String, String>> request = new HttpEntity<>(body, headers);
 
         AuthResponse response = restTemplate.postForObject(url, request, AuthResponse.class);
+
+        if (response == null || response.getToken() == null) {
+            throw new RuntimeException("Login failed: token is null. Check email/password and auth URL.");
+        }
         return response.getToken();
     }
 }
